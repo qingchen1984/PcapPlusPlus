@@ -18,7 +18,7 @@ sed -i $SED_PARAMS "s|"/Dist"|""|" $DIST_DIR_NAME/mk/PcapPlusPlus.mk
 
 cp Deploy/README.release.linux_mac $DIST_DIR_NAME/README.release
 cp -R Examples/ArpSpoofing-SimpleMakefile-Linux $DIST_DIR_NAME/example-app
-sed -i $SED_PARAMS "s|"../Dist/"|""|" $DIST_DIR_NAME/Dist/example-app/Makefile
+sed -i $SED_PARAMS "s|"../Dist/"|""|" $DIST_DIR_NAME/example-app/Makefile
 
 tar -zcvf $DIST_DIR_NAME.tar.gz $DIST_DIR_NAME/
 curl --upload-file ./$DIST_DIR_NAME.tar.gz https://transfer.sh/$DIST_DIR_NAME.tar.gz
