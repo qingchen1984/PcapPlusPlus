@@ -14,7 +14,7 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then SED_PARAMS="''"; fi
 
 sed -i $SED_PARAMS "1s|.*|$NEW_FIRST_LINE|" $DIST_DIR_NAME/mk/PcapPlusPlus.mk
 
-sed -i $SED_PARAMS "s|"/Dist"|""|" $DIST_DIR_NAME/mk/PcapPlusPlus.mk
+sed -i $SED_PARAMS "s|"$(PCAPPLUSPLUS_HOME)/Dist"|"$(PCAPPLUSPLUS_HOME)"|" $DIST_DIR_NAME/mk/PcapPlusPlus.mk
 
 cp Deploy/README.release.linux_mac $DIST_DIR_NAME/README.release
 cp -R Examples/ArpSpoofing-SimpleMakefile-Linux $DIST_DIR_NAME/example-app
