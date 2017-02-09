@@ -35,9 +35,12 @@ light_pcapng light_read_from_path(const char *file_name)
 	uint32_t *memory;
 	size_t size = 0;
 	__fd_t fd = light_open(file_name, LIGHT_OREAD);
+	fprintf(stderr, "fd= 0x%X, %d\n", fd, fd);
 	DCHECK_INT(fd, 0, light_stop);
+	
 
 	size = light_size(fd);
+	fprintf(stderr, "size= 0x%X, %d\n", size, size);
 	DCHECK_INT(size, 0, light_stop);
 
 	memory = calloc(size, 1);
